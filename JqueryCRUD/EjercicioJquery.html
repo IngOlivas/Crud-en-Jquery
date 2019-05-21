@@ -1,0 +1,194 @@
+     <!DOCTYPE html>
+<html>
+<head>
+     <title>Catalogo de Clientes</title>
+     <meta charset="utf-8">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <meta ="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">    
+
+</head>
+<body>
+
+     <!-- Modal Guardar-->
+     <div id="Fierro" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Datos del Cliente</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <div class="modal-body">     
+                         <!--TEXTO INTERNO DEL MODAL -->
+                         <form>
+                              <div class="form-group">
+                                   <label for="txtNombre">Nombre</label>
+                                   <input type="text" class="form-control" id="txtNombre" aria-describedby="emailHelp" placeholder="Ingrese su Nombre">
+                              </div>
+                              <div class="form-group">
+                                   <label for="txtApellido">Apellido</label>
+                                   <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese sus apellidos">
+                              </div>
+                              <div class="form-group">
+                                   <label for="txtEdad">Edad</label>
+                                   <input type="number" class="form-control" id="txtEdad" placeholder="Ingrese su edad">
+                              </div>
+                              <label>Sexo</label>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="chkHombre" enabled>
+                                   <label class="form-check-label" for="chkHombre">
+                                        Hombre
+                                   </label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="chkMujer" enabled>
+                                   <label class="form-check-label" for="chkMujer">
+                                        Mujer
+                                   </label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="chkOtro" enabled>
+                                   <label class="form-check-label" for="chkOtro">
+                                        Otro
+                                   </label>
+                              </div>
+                              <div class="form-group">
+                                   <label for="txtEspecificar">Especificar</label>
+                                   <input type="text" class="form-control" id="txtEspecificar" placeholder="Especifique ..." disabled>
+                              </div>
+                         </form>
+                         <!--!!!!!!!!!!!!!!!!!-->
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                         <button id="btnGuardar" type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <!--!!!!!!!!!!!!!!-->
+
+
+     <!-- Modal Modificar-->
+     <div id="modalModificar" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Modificar Datos del Cliente</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <div class="modal-body">     
+                         <!--TEXTO INTERNO DEL MODAL -->
+                         <form>
+                              <div class="form-group">
+                                   <label for="txtNombre">Nombre</label>
+                                   <input type="text" class="form-control" id="txtNombres" aria-describedby="emailHelp" placeholder="Ingrese su Nombre">
+                              </div>
+                              <div class="form-group">
+                                   <label for="txtApellido">Apellido</label>
+                                   <input type="text" class="form-control" id="txtApellidos" placeholder="Ingrese sus apellidos">
+                              </div>
+                              <div class="form-group">
+                                   <label for="txtEdad">Edad</label>
+                                   <input type="number" class="form-control" id="txtEdades" placeholder="Ingrese su edad">
+                              </div>
+                              <label>Sexo</label>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="chkHombres" enabled>
+                                   <label class="form-check-label" for="chkHombre">
+                                        Hombre
+                                   </label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="chkMujeres" enabled>
+                                   <label class="form-check-label" for="chkMujer">
+                                        Mujer
+                                   </label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="checkbox" value="" id="chkOtros" enabled>
+                                   <label class="form-check-label" for="chkOtros">
+                                        Otro
+                                   </label>
+                              </div>
+                              <div class="form-group">
+                                   <label for="txtEspecificarSexo">Especificar</label>
+                                   <input type="text" class="form-control" id="txtEspecificarSexo" placeholder="Especifique ..." disabled>
+                              </div>
+                         </form>
+                         <!--!!!!!!!!!!!!!!!!!-->
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                         <button id="btnModificarCambios" type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <!--!!!!!!!!!!!!!!-->
+     <!--Modal Confirmacion-->
+     <div id="ModalConfirmacion" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+              <div class="modal-header">
+                 <h5 class="modal-title">Ventana de Confirmacion</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+               </button>
+          </div>
+          <div class="modal-body">
+            <p>¿Continuar con la operacion?</p>
+            <button type="button" class="btn btn-success" id="BtnConfirmacion"        >Continuar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+       </div>
+  </div>
+</div>
+</div>
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
+<div>
+     <h1>Catalogo de Clientes</h1>
+
+     <button id="btnAñadir"   type="button" class="btn btn-success">Añadir Cliente</button>
+</br>
+<br>
+<br>
+<table id = "tablaFierro" class="table table-hover" >
+
+     <thead>
+               <tr>
+               <th>Nombre
+                    <br>
+                    <input type="text" class="form-control buscarNombre" placeholder="Buscar Nombre" id="txtBuscarNombre">
+               </th>
+               <th>Apellidos
+                    <br>
+                    <input type="text" class="form-control buscarApellido" placeholder="Buscar Apellido">
+               </th>
+               <th>Edad
+                    <br>
+                    <input type="text" class="form-control buscarEdad" placeholder="Buscar Edad">
+               </th>
+               <th>Sexo
+                    <br>
+                    <input type="text" class="form-control buscarSexo" placeholder="Buscar Sexo">
+               </th>
+               <th>Opciones</th>
+               </tr>
+     </thead>
+     <tbody>
+
+     </tbody>
+</table>
+</div>  
+<script type="text/javascript" src="js/jqueryFunciones.js"></script>
+</body>
+</html>
